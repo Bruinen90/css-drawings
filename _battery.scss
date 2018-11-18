@@ -1,0 +1,119 @@
+$bck-color: #333;
+$main-color: #ccc;
+$bar-color: #ccc;
+
+.battery {
+    margin: auto;
+    //default w/h ratio: 0.6
+    width: 120px;
+    height: 200px;
+    position: relative;
+}
+
+.battery__cell {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-color: $main-color;
+}
+
+.battery__cell:after {
+    content: "";
+    background-color: $bck-color;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.battery__plus {
+    background-color: $main-color;
+    position: absolute;
+    width: 50%;
+    height: 8%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.battery__bar {
+    background-color: $bar-color;
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 20%;
+    left: 12.5%;
+    z-index: 2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.battery__bar--bottom {
+    bottom: 12.5%;
+    animation-name: bottom;
+}
+
+.battery__bar--middle {
+    opacity: 0;
+    bottom: 40%;
+    animation-name: middle;
+}
+
+.battery__bar--top {
+    opacity: 0;
+    bottom: 67.5%;
+    animation-name: top;
+}
+
+@keyframes bottom {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    82% {
+        opacity: 0;
+    }
+
+    98% {
+        opacity: 0
+    }
+}
+
+@keyframes middle {
+    30% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    82% {
+        opacity: 0;
+    }
+}
+
+@keyframes top {
+    60% {
+        opacity: 0;
+    }
+    63% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+    82% {
+        opacity: 0;
+    }
+}
