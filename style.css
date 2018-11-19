@@ -130,5 +130,63 @@ body {
     opacity: 0;
   }
 }
+.clock {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: auto;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.clock__inside {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 5%;
+  margin: auto;
+  background-color: #333;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+
+.clock__centerCircle {
+  background-color: #ccc;
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 46%;
+  left: 0;
+  right: 0;
+}
+
+.clock__hand {
+  position: absolute;
+  background-color: #ccc;
+  height: 45%;
+  width: 1%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 5%;
+  transform-origin: 50% 100%;
+}
+
+.clock__hand--seconds {
+  background-color: #DB162F;
+}
+
+.clock__hand--minutes {
+  width: 1.5%;
+}
+
+.clock__hand--hours {
+  width: 2.5%;
+  height: 30%;
+  top: 20%;
+}
 
 /*# sourceMappingURL=style.css.map */

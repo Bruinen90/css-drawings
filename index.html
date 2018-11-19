@@ -23,8 +23,17 @@
 
             <div class="imageContainer">
 
+                <div class="clock">
+                    <div class="clock__inside">
+                        <div class="clock__hand clock__hand--hours"></div>
+                        <div class="clock__hand clock__hand--minutes"></div>
+                        <div class="clock__hand clock__hand--seconds"></div>
+                        <div class="clock__centerCircle"></div>
+                    </div>
+                </div>
+
             </div>
-            
+
             <div class="imageContainer">
 
             </div>
@@ -42,6 +51,22 @@
             </div>
 
         </section>
+
+        <script type="text/javascript">
+            const secondsHand = document.getElementsByClassName("clock__hand--seconds")[0];
+            const minutesHand = document.getElementsByClassName("clock__hand--minutes")[0];
+            const hoursHand = document.getElementsByClassName("clock__hand--hours")[0];
+            setInterval(()=> {
+                let now = new Date();
+                let secondsDeg = now.getSeconds() * 6;
+                let minutesDeg = now.getMinutes() *6 + secondsDeg/60;
+                let hoursDeg = now.getHours() * 30 + minutesDeg/60;
+                secondsHand.style.transform = `rotate(${secondsDeg}deg)`;
+                minutesHand.style.transform = `rotate(${minutesDeg}deg)`;
+                hoursHand.style.transform = `rotate(${hoursDeg}deg)`;
+            }, 1000)
+
+        </script>
 
     </body>
 </html>

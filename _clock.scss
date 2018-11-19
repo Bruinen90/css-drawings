@@ -1,0 +1,65 @@
+$bck-color: #333;
+$main-color: #ccc;
+$hand-color: #ccc;
+$accent-color: #DB162F;
+
+.clock {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: auto;
+    background-color: $main-color;
+    border-radius: 50%;
+}
+
+.clock__inside {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 5%;
+    margin: auto;
+    background-color: $bck-color;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+.clock__centerCircle {
+    background-color: $main-color;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 46%;
+    left: 0;
+    right: 0;
+}
+
+.clock__hand {
+    position: absolute;
+    background-color: $hand-color;
+    height: 45%;
+    width: 1%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 5%;
+    transform-origin: 50% 100%;
+}
+
+.clock__hand--seconds {
+    background-color: $accent-color;
+    // transition: all .2s;
+    // transition-timing-function: cubic-bezier(0, 2.59, 0.9, 0.28);
+}
+
+.clock__hand--minutes {
+    width: 1.5%;
+}
+
+.clock__hand--hours {
+    width: 2.5%;
+    height: 30%;
+    top: 20%;
+}
