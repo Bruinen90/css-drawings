@@ -8,7 +8,7 @@ body {
 }
 
 .mainContainer {
-  padding: 10%;
+  padding: 5%;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-gap: 1%;
@@ -20,6 +20,9 @@ body {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .battery {
@@ -187,6 +190,51 @@ body {
   width: 2.5%;
   height: 30%;
   top: 20%;
+}
+
+.wifi {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wifi__shape {
+  position: relative;
+  background-color: red;
+  width: 70%;
+  height: 70%;
+  transform: rotate(45deg);
+  bottom: 0%;
+  overflow: hidden;
+}
+
+.wifi__circle {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  border-radius: 50%;
+  width: 150%;
+  height: 150%;
+  background-color: #ccc;
+}
+
+.wifi__circle::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 6%;
+  top: 6%;
+  border-radius: 50%;
+  width: 88%;
+  height: 88%;
+  background-color: #444;
 }
 
 /*# sourceMappingURL=style.css.map */
