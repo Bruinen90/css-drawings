@@ -192,12 +192,55 @@ body {
   top: 20%;
 }
 
+@keyframes small {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0.2;
+  }
+  98% {
+    opacity: 0.2;
+  }
+}
+@keyframes medium {
+  30% {
+    opacity: 0.2;
+  }
+  33% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0.2;
+  }
+}
+@keyframes large {
+  60% {
+    opacity: 0.2;
+  }
+  63% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 0.2;
+  }
+}
 .wifi {
+  display: none;
   width: 200px;
   height: 200px;
   position: relative;
   overflow: hidden;
-  background-color: #000;
+  background-color: #333;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -206,10 +249,11 @@ body {
 
 .wifi__shape {
   position: relative;
-  background-color: red;
+  background-color: #333;
   width: 70%;
   height: 70%;
-  transform: rotate(45deg);
+  transform: rotate(45deg) perspective(999px) translateZ(1px);
+  backface-visibility: hidden;
   bottom: 0%;
   overflow: hidden;
 }
@@ -217,24 +261,61 @@ body {
 .wifi__circle {
   box-sizing: border-box;
   position: absolute;
-  left: 0%;
-  top: 0%;
+  left: 10%;
+  top: 10%;
   border-radius: 50%;
   width: 150%;
   height: 150%;
   background-color: #ccc;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 .wifi__circle::before {
   content: "";
   box-sizing: border-box;
   position: absolute;
-  left: 6%;
-  top: 6%;
+  left: 10%;
+  top: 10%;
   border-radius: 50%;
-  width: 88%;
-  height: 88%;
-  background-color: #444;
+  width: 80%;
+  height: 80%;
+  background-color: #333;
+}
+
+.wifi__circle--big {
+  opacity: 0.2;
+  animation-name: large;
+}
+
+.wifi__circle--medium {
+  opacity: 0.2;
+  left: 40%;
+  top: 40%;
+  width: 90%;
+  height: 90%;
+  z-index: 2;
+  animation-name: medium;
+}
+
+.wifi__circle--medium::before {
+  left: 15%;
+  top: 15%;
+  width: 70%;
+  height: 70%;
+}
+
+.wifi__circle--small {
+  left: 70%;
+  top: 70%;
+  width: 30%;
+  height: 30%;
+  z-index: 3;
+  animation-name: small;
+}
+
+.wifi__circle--small::before {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
